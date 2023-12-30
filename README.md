@@ -1,5 +1,10 @@
 # About
-A docker image with python application to study Kubernetes cluster
+A docker image with simple Flask application to test Kubernetes cluster. 
+
+For example, one can simulate network failure scenarios (via toggling liveness probe) or app failure (using readiness 
+probe programmable logic). The app contains in-built version and generates a unique UUID on startup
+
+Business logic is simple - the main endpoint returns random number  
 
 # Installation
 
@@ -25,7 +30,7 @@ python3 app.py
 Test and dev built:
 
 ```shell
-sudo docker  build -t randomizer:1.0 .
+sudo docker build -t randomizer:1.0 .
 sudo docker run randomizer:1.0
 ```
 Note, docker runs images in isolation mode by default and hence you cannot connect to localhost:8080. Use mapping instead:
@@ -38,8 +43,9 @@ docker kill <container_id>
 Production built:
 
 ```shell
-docker buildx 
-docker push
+docker login -u <user_name>
+docker tag randomizer:1.0 <user_name>/randomizer:1.0
+docker push <user_name>/randomizer:1.0
 ```
 
 # API
