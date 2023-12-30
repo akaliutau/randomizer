@@ -35,7 +35,7 @@ docker run -d -p 8080:8080 randomizer:1.0
 docker kill <container_id>
 ```
 
-Production build:
+Production built:
 
 ```shell
 docker buildx 
