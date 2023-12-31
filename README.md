@@ -19,11 +19,11 @@ pip install -r requirements.txt
 
 To start local server
 ```shell
-export PORT=8080
+# export PORT=8080 - optional
 python3 app.py
 ```
 
-(default port is 80 and is usually taken byh other processes)
+(default port is 8080, since 80 is usually taken by other processes)
 
 # Building image
 
