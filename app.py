@@ -78,7 +78,7 @@ def random():
         'id': properties.id,
         'version': properties.version,
         'random': random_gen.random()
-    })
+    }), 200
 
 
 @app.route('/memory-loader')
